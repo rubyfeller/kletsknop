@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.min.css">
-    <title>Kletsknop - Home</title>
+    <title>Kletsknop - Contact</title>
 </head>
 <?php include "includes/navigation.php"?>
 <body>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas earum tempore architecto minus reiciendis voluptatum eaque iure maxime modi voluptate temporibus quae, praesentium consectetur saepe dolorem. Sit saepe harum pariatur.</p>
+    <p>Contact</p>
 </body>
 </html>
