@@ -4,10 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <title>Kletsknop - Home</title>
 </head>
+<?php include "includes/navigation.php"?>
 <body>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas earum tempore architecto minus reiciendis voluptatum eaque iure maxime modi voluptate temporibus quae, praesentium consectetur saepe dolorem. Sit saepe harum pariatur.</p>
+  <!-- Card 1 -->
+<div class="blog-card">
+    <div class="meta">
+      <div class="photo"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.376249756863!2d5.477473215767922!3d51.45124807962593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6d92199730073%3A0x1c98f3a0d8ee087b!2sFontys%20Hogescholen%20(Campus%20Rachelsmolen)!5e0!3m2!1snl!2snl!4v1635860744105!5m2!1snl!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+    </div>
+    <div class="description">
+      <h1>Fontys Rachelsmolen</h1>
+      <h2>Zin om te kletsen?</h2>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+      <p class="read-more">
+        <a href="#">Kom Eraan!</a>
+      </p>
+    </div>
+  </div>
+<!-- Card 2 -->
+  <div class="blog-card">
+    <div class="meta">
+      <div class="photo"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.376249756863!2d5.477473215767922!3d51.45124807962593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6d92199730073%3A0x1c98f3a0d8ee087b!2sFontys%20Hogescholen%20(Campus%20Rachelsmolen)!5e0!3m2!1snl!2snl!4v1635860744105!5m2!1snl!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+    </div>
+    <div class="description">
+      <h1>Fontys Rachelsmolen</h1>
+      <h2>Zin om te kletsen?</h2>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+      <p class="read-more">
+        <a href="#">Kom Eraan!</a>
+      </p>
+    </div>
+  </div>
 </body>
 </html>
