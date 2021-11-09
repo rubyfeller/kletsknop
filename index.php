@@ -10,21 +10,8 @@
 <?php include "includes/navigation.php"?>
 <body>
   <div class="align-items">
-  
-  <div class="search-bar">
-    <input type="search" placeholder="Vul hier je omgeving in">
-  </div>
-  <div class="google-maps">
-    <input
-      id="pac-input"
-      class="controls"
-      type="text"
-      placeholder="Search Box"
-    />
-    <div id="map"></div>
 
-    
-  </div>
+  <div class="google-maps"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79568.70417003262!2d5.381471015315476!3d51.448571670253436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6d91b5579c39f%3A0xf39ad2648164b998!2sEindhoven!5e0!3m2!1snl!2snl!4v1636116543983!5m2!1snl!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
 
     </div>
   <div class="cards-container">
@@ -81,9 +68,4 @@
 </body>
 <?php include "includes/footer.php"?>
 <script src="js/main.js"></script>
-<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-<script
-      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initAutocomplete&libraries=places&v=weekly"
-      async
-    ></script>
 </html>
