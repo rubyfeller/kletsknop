@@ -29,6 +29,7 @@
     </div>
   <div class="cards-container">
     <h2 class="titleCards">Ingedrukte knoppen:</h2>
+    <p id="serverMessage">Test</p>
   <div class="cards">
       
       <!-- Card 1 -->
