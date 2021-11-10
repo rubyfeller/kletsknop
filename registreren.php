@@ -1,4 +1,48 @@
+<?php 
+    // include database connection
+    include "database.php";
+    session_start();
 
+    $emailAdres = $userName = $hashedPassword = $userAge = $userHobby = $userFacts = "";
+    if(isset($_POST['submit'])) {
+
+        if(!empty($_POST["register-email"])) {
+            
+            if(!empty($_POST["register-name"])) {
+
+                if (!empty($_POST["register-password"])) { 
+                    
+                    $emailAdres = strtolower($_POST["register-email"]);
+                    $userName = strtolower($_POST["register-name"]);
+                    $hashedPassword = password_hash($_POST["register-password"], PASSWORD_DEFAULT);
+                    $userAge = strtolower($_POST["register-age"]);
+                    $userHobby = strtolower($_POST["register-hobbies"]);
+                    $userFacts = strtolower($_POST["register-facts"]);
+
+                    $registerStatement = "INSERT INTO users (userId, userEmail, userName, userPassword, userAge, userHobby, userFacts) 
+                                          VALUES (null, '$emailAdres', '$userName ', '$hashedPassword ',  '$userAge',  '$userHobby',  '$userFacts');";
+                
+                    // execute the statement
+                    mysqli_query($connection, $registerStatement);
+                    
+                    // close the database connection
+                    $connection->close();
+
+                    echo "<script>alert('Het registreren is gelukt!')</script>";
+                } else {
+                    echo "Je wachtwoord mag niet leeg zijn.";
+                }
+            } else {
+                echo "Je naam mag niet leeg zijn.";
+            }
+
+        } else {
+            echo "Je emailadres mag niet leeg zijn.";
+        }
+    } 
+
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,13 +55,12 @@
 <?php include "includes/navigation.php"?>
 <body>
     <div class="registreren-container">
-        
 
-        <form action="register-handle.php" method="POST">
+        <form method="POST">
             
             <div class="register-left">
             <h2>Registreer nu</h2>
-                <div class="input-wrapper">
+                <div class="input-wrapper" action="includes/registerAction.php">
                     <label for="register-email">E-mailadres*</label>
                     <input type="email" id="register-email" name="register-email" required> 
                 </div>
@@ -46,7 +89,7 @@
                 <label for="register-icon">Upload hier uw foto</label>
                 <input type="" placeholder="Kies bestand">
             
-                <input type="submit" value="Registreren" class="register-button">
+                <input type="submit" name="submit" value="Registreren" class="register-button">
             </div>
         </form>
     </div>

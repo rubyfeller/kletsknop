@@ -1,9 +1,10 @@
 <?php 
-$mysqli = new mysqli("localhost", "pma", "Qwe123", "kletsknop");
+$connection = new mysqli("localhost", "root", "", "kletsknop");
+// $mysqli = new mysqli("localhost", "pma", "Qwe123", "kletsknop");
 
 // Check connection
-if ($mysqli -> connect_errno) {
-    echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+if ($connection -> connect_errno) {
+    echo "Failed to connect to MySQL: " . $connection -> connect_error;
     exit();
   }
 ?>
