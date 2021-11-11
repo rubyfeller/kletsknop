@@ -5,7 +5,7 @@ let serverGetMessages = document.querySelector("serverMessage");
 let peopleUnderwayStored = localStorage.getItem("peopleUnderway");
 let socketMessage = "";
 
-getMessage();
+setInterval(getMessage, 5000);
 
 if (buttonClicked == 0) {
   showNotification();
@@ -22,9 +22,22 @@ function showNotification() {
 }
 
 async function getMessage() {
-  let response = await fetch("websockets/getMessages.php");
-  let data = await response.text();
-  console.log(data);
+  fetch("http://192.168.48.42:8080/API/clicks")
+    .then((data) => {
+      return data.json();
+    })
+    .then((post) => {
+      if (post.msg.clickMessage) {
+        console.log(post.msg.clickMessage);
+        let clickId = post.msg.clickId;
+        let clickMessage = post.msg.clickMessage;
+        let clickTime = post.msg.clickTime;
+        document.getElementById("serverMessage").innerHTML =
+          clickId + " " + clickMessage + " " + clickTime;
+      } else {
+        console.log("Er is nog niet op de knop gedrukt");
+      }
+    });
 }
 
 function accept() {
