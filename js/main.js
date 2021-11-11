@@ -1,7 +1,9 @@
 let buttonClicked = 0;
 let counter = 0;
 let counterElem = document.querySelector(".peopleUnderway");
+let serverGetMessages = document.querySelector("serverMessage");
 let peopleUnderwayStored = localStorage.getItem("peopleUnderway");
+let socketMessage = "";
 
 setInterval(getMessage, 5000);
 
