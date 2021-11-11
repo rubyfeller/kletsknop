@@ -53,6 +53,7 @@ nav {
         text-align: right;
         padding-top: 20px;
         display: inline-block;
+
       }
       li {
         display: inline;
@@ -154,6 +155,15 @@ nav {
         }
       }
     }
+
+    .socialMedia {
+      text-align: center;
+      padding: 75px 0px;
+      img {
+        width: 250px;
+        height: 60px;
+      }
+    }
   }
 
 a {
@@ -186,9 +196,6 @@ a {
     height: 500px;
   }
 }
-
-
-
 
 .cards-container {
   .titleCards {
@@ -350,11 +357,8 @@ a {
           
         }
       }
-      
     }
-
   }
-
 }
 // Contact pagina
 // ------------------------------------------------------------------------
@@ -673,10 +677,14 @@ a {
         color: #9671FF;
         border: 1px solid #9671FF;
       }
+
+      .right-side{
+        width: 100%;
+        margin-left: 0;
+      }
     }
   }
 }
-
 
 // Buurtbewoners pagina
 // ------------------------------------------
@@ -722,12 +730,7 @@ a {
           margin-bottom: 21px;
           font-size: 16px;
         }
-
-      }
-    
-        
+      }    
     }
-      
   }
-    
 }

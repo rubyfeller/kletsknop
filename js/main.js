@@ -1,7 +1,11 @@
 let buttonClicked = 0;
 let counter = 0;
 let counterElem = document.querySelector(".peopleUnderway");
+let serverGetMessages = document.querySelector("serverMessage");
 let peopleUnderwayStored = localStorage.getItem("peopleUnderway");
+let socketMessage = "";
+
+setInterval(getMessage, 5000);
 
 if (buttonClicked == 0) {
   showNotification();
@@ -15,6 +19,25 @@ if (!localStorage.getItem("peopleUnderway")) {
 
 function showNotification() {
   document.getElementById("notification").style.display = "inline";
+}
+
+async function getMessage() {
+  fetch("http://192.168.48.42:8080/API/clicks")
+    .then((data) => {
+      return data.json();
+    })
+    .then((post) => {
+      if (post.msg.clickMessage) {
+        console.log(post.msg.clickMessage);
+        let clickId = post.msg.clickId;
+        let clickMessage = post.msg.clickMessage;
+        let clickTime = post.msg.clickTime;
+        document.getElementById("serverMessage").innerHTML =
+          clickId + " " + clickMessage + " " + clickTime;
+      } else {
+        console.log("Er is nog niet op de knop gedrukt");
+      }
+    });
 }
 
 function accept() {
