@@ -68,4 +68,3 @@ function rejectNotification() {
     document.getElementById("notification").style.display = "none";
   }, 3000);
 }
-
