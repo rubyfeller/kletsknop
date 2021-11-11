@@ -5,7 +5,7 @@ html, body {
     background: #f1f1f1;
 }
 $color_white: #fff;
-$color_prime: #5ad67d;
+$color_prime: #9671FF;
 $color_grey: #e2e2e2;
 $color_grey_dark: #a2a2a2;
 
@@ -26,7 +26,7 @@ nav {
     top: 0;
     position: fixed;
     overflow: hidden;
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 7%, rgba(238,255,240,1) 17%, rgba(239,248,238,1) 29%, rgba(149,233,143,1) 58%, rgba(106,229,101,1) 96%, rgba(66,226,71,1) 100%);    top: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 18%, rgba(150,113,255,1) 60%, rgba(140,100,255,1) 71%, rgba(150,113,255,1) 88%, rgba(150,113,255,1) 96%, rgba(150,113,255,1) 100%);    
     width: 100%;
     border-bottom: 1px solid lightgrey;
     z-index: 999;
@@ -42,7 +42,7 @@ nav {
         li {
           a{
             img {
-              width: 290px;
+              width: 200px;
               height: 60px;
             }
           }
@@ -52,6 +52,8 @@ nav {
       .NavRight {
         text-align: right;
         padding-top: 20px;
+        display: inline-block;
+
       }
       li {
         display: inline;
@@ -66,6 +68,18 @@ nav {
     }
   }
 
+  @media (max-width: 950px) { 
+    nav {
+      max-width: 425px;
+      height: 95px;
+      width: 100%;
+    }
+    .NavRight {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
   //footer
   //----------------------------------------------------------------------
   footer {
@@ -74,12 +88,12 @@ nav {
     background-color: white;
     .footerLogo {
       .logo {
-        width: 290px;
+        width: 200px;
         height: 60px;
         margin-top: 70px;
       }
       .kletsknop {
-        width: 75px;
+        width: 70px;
         margin: 15px 0px 50px 0px;
       }
     }
@@ -105,6 +119,39 @@ nav {
           text-decoration: none;
           margin-right: 167px;
           font-size: 14px;
+        }
+      }
+    }
+
+    .socialMedia {
+      text-align: center;
+      padding: 75px 0px;
+      img {
+        width: 250px;
+        height: 60px;
+      }
+    }
+  }
+
+  @media (max-width: 950px) { 
+    footer {
+      width: 100vw;
+      
+      .contactInfo {
+        width: 100vw;
+        .contactinfoTop {
+          width: 425px;
+        }
+        
+        ul {
+          width: 425px;
+          display: block;
+          
+          padding-left: 0px;
+          li {
+            margin-left: 150px;
+            margin-bottom: 10px;
+          }
         }
       }
     }
@@ -145,19 +192,14 @@ a {
   margin-top: 50px;
   margin-bottom: 100px;
   iframe {
-  width: 1200px;
+    width: 1200px;
+    height: 500px;
   }
 }
 
-
-
-
-
-
-
 .cards-container {
   .titleCards {
-    color: #42E247;
+    color: #9671FF;
     text-align: left;
     font-size: 30px;
     font-family: sans-serif;
@@ -262,6 +304,62 @@ a {
     }
 }
 
+
+@media (max-width: 950px) {
+  .align-items {
+    max-width: 400px;
+  }
+
+  .google-maps {
+    
+    iframe {
+      width: 100%;
+      height: 213;
+    }
+  }
+
+  .cards-container {
+    .titleCards {
+      color: #9671FF;
+      text-align: left;
+      font-size: 30px;
+      font-family: sans-serif;
+      margin-left: 10px;
+    }
+  }
+  
+  .cards {
+    display: block;
+    margin-left: 0px;
+  }
+
+  .blog-card {
+    display: block;
+    .description {
+      .read-more {
+        width: 100%;
+        text-align: center;
+        a {
+          width: 100%;
+        }
+      }
+    }
+    .meta {
+      width: 375px;
+      margin: 10px 0px 25px 15px;
+      .photo {
+        width: 375px;
+        border: 1px solid black;
+        iframe {
+         
+          width: 375px;
+          height: 300px;
+          
+        }
+      }
+    }
+  }
+}
 // Contact pagina
 // ------------------------------------------------------------------------
 .container{
@@ -319,7 +417,7 @@ a {
         .topic{
           font-size: 18px;
           font-weight: 500;
-          color: #42E247;
+          color: #9671FF;
         }
       }
     }
@@ -335,7 +433,7 @@ a {
       .topic-text{
         font-size: 23px;
         font-weight: 600;
-        color: #42E247;
+        color: #9671FF;
       }
 
       .input-box{
@@ -370,14 +468,14 @@ a {
           outline: none;
           border: none;
           padding: 8px 16px;
-          border: 1px solid #42E247;
+          border: 1px solid #9671FF;
           border-radius: 20px;
-          background: #42E247;
+          background: #9671FF;
           cursor: pointer;
           transition: all 0.3s ease;
           &:hover{
             background-color: white;
-            color: #42E247;
+            color: #9671FF;
           }
         }
       }
@@ -422,86 +520,217 @@ a {
   }
 }
 
+// Register pagina
+// ------------------------------------------------------------------------
 
+.registreren-container {
+  margin: 0 auto;
+  border: 1px solid #707070;
+  background-color: white;
+  padding: 40px 70px;
+  width: 1000px;
+  box-shadow: 0 3px 7px -1px rgba(#000, .1);
+  h2 {
+    color: #9671FF;
+    font-family: sans-serif;
+    font-size: 50px;
+    margin: 0;
+  }
 
-// Google map shizzle
-// ----------------------------------------------
-/* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-       #map {
-        height: 100%;
+  form {
+    display: flex;
+    .register-left {
+      .input-wrapper {
+        label {
+          margin: 15px 0px;
+          display: block;
+          font-size: 20px;
+          font-family: sans-serif;
+        }
+
+        input {
+          width: 400px;
+          height: 30px;
+          background-color: #F1F1F1;
+          border: 1px solid lightgrey;
+          &:hover {
+            border: 1px solid #2680EB;
+          }
+        }
+        #register-feitje {
+          height: 120px;
+        }
       }
-      
-      #description {
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
+    }
+    
+    .register-right {
+      position: relative;
+      margin-left: 150px;
+      label {
+          margin: 72px 0px 15px 0px;
+          display: block;
+          font-size: 20px;
+          font-family: sans-serif;
       }
-      
-      #infowindow-content .title {
-        font-weight: bold;
-      }
-      
-      #infowindow-content {
-        display: none;
-      }
-      
-      #map #infowindow-content {
-        display: inline;
-      }
-      
-      .pac-card {
-        background-color: #fff;
-        border: 0;
-        border-radius: 2px;
-        box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
-        margin: 10px;
-        padding: 0 0.5em;
-        font: 400 18px Roboto, Arial, sans-serif;
-        overflow: hidden;
-        font-family: Roboto;
-        padding: 0;
-      }
-      
-      #pac-container {
-        padding-bottom: 12px;
-        margin-right: 12px;
-      }
-      
-      .pac-controls {
-        display: inline-block;
-        padding: 5px 11px;
-      }
-      
-      .pac-controls label {
-        font-family: Roboto;
-        font-size: 13px;
-        font-weight: 300;
-      }
-      
-      #pac-input {
-        background-color: #fff;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-        margin-left: 12px;
-        padding: 0 11px 0 13px;
-        text-overflow: ellipsis;
+      input {
         width: 400px;
+        height: 300px;
+        background-color: #F1F1F1;
+        border: 1px solid lightgrey;
+        text-align: center;
+        &:hover {
+          border: 1px solid #2680EB;
+        }
       }
-      
-      #pac-input:focus {
-        border-color: #4d90fe;
+    }
+    
+    
+
+    input[type="submit"] {
+      cursor: pointer;
+      width: 400px;
+      border-radius: 30px;
+      height: 50px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      background-color: #9671FF;
+      border: 1px solid #9671FF;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      &:hover{
+        background-color: white;
+        color: #9671FF;
+        border: 1px solid #9671FF;
       }
-      
-      #title {
-        color: #fff;
-        background-color: #4d90fe;
-        font-size: 25px;
-        font-weight: 500;
-        padding: 6px 12px;
+    }
+  }
+}
+
+// inlog pagina
+// --------------------------------------------------------
+.inlog-container {
+  border: 1px solid #707070;
+  margin: 0 auto;
+  background-color: white;
+  padding: 40px 70px;
+  width: 1000px;
+  box-shadow: 0 3px 7px -1px rgba(#000, .1);
+  h2 {
+    color: #9671FF;
+    font-family: sans-serif;
+    font-size: 50px;
+    margin: 0;
+    margin-bottom: 45px;
+  }
+
+  form {
+    padding-left: 300px;
+    .forgotPassword {
+      color: blue;
+      font-family: sans-serif;
+      &:hover {
+        text-decoration: underline;
       }
-      
-      #target {
-        width: 345px;
+    }
+      .input-wrapper {
+        label {
+          margin: 15px 0px;
+          display: block;
+          text-align: left;
+          font-size: 20px;
+          font-family: sans-serif;
+        }
+
+        input {
+          width: 400px;
+          height: 30px;
+          background-color: #F1F1F1;
+          border: 1px solid lightgrey;
+          &:hover {
+            border: 1px solid #2680EB;
+          }
+        }
+        #register-feitje {
+          height: 120px;
+        }
       }
+    
+    
+
+    input[type="submit"] {
+      cursor: pointer;
+      width: 400px;
+      border-radius: 30px;
+      margin-bottom: 50px;
+      height: 50px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      background-color: #9671FF;
+      border: 1px solid #9671FF;
+      text-align: center;
+      &:hover{
+        background-color: white;
+        color: #9671FF;
+        border: 1px solid #9671FF;
+      }
+
+      .right-side{
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+// Buurtbewoners pagina
+// ------------------------------------------
+
+.users-container {
+  display: grid;
+  grid-template-columns:  1fr 1fr 1fr;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1031px;
+  width: 100%;
+  .user-container {
+    margin-right: 50px;
+    margin-bottom: 32px;
+    width: 309px;
+    background-color: white;
+    
+    font-family: sans-serif;
+    
+
+    .userPicture {
+      width: 100%;
+      height: 322px;
+    }
+
+    .userText {
+      height: 250px;
+      padding: 0px 0px 0px 20px;
+      border: 1px solid black;
+      border-top: 1px solid white;
+      padding-top: 21px;
+      .userName, .userAge, .userHobbies, .userFacts {
+
+        h3 {
+          color: #9671FF;
+          font-weight: bold;
+          font-size: 20px;
+          margin: 0;
+        }
+
+        p {
+          margin: 0;
+          margin-bottom: 21px;
+          font-size: 16px;
+        }
+      }    
+    }
+  }
+}
