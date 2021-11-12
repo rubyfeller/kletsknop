@@ -1,6 +1,5 @@
 <footer>
     <div class="footerLogo"><a href="index.php"><img class= "logo" src="img/kletsknopLogo.png"></a></div>
-    <!-- <div class="footerLogo"><a href="index.php"><img class= "kletsknop" src="img/kletsknop.png"></a></div> -->
     <div class="contactInfo">
         <ul class="contactInfoTop">
             <li>Jassenstraat 27 <br>5722 AM Eindhoven</li>
