@@ -20,7 +20,6 @@
                         ?>
                     
                         <li><a href="includes/logout.php" class="buttonNav">Uitloggen</a></li>
-                        <li><a href="#"><?php ?></a></li>
                 <?php  } ?>
             </div>
         </ul> 

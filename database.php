@@ -1,6 +1,6 @@
 <?php 
-$connection = new mysqli("localhost", "root", "", "kletsknop");
-// $mysqli = new mysqli("localhost", "pma", "Qwe123", "kletsknop");
+// $connection = new mysqli("localhost", "root", "", "kletsknop");
+$mysqli = new mysqli("localhost", "pma", "Qwe123", "kletsknop");
 
 // Check connection
 if ($connection -> connect_errno) {

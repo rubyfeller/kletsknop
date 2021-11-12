@@ -33,7 +33,13 @@ async function getMessage() {
       let clickMessage = post.msg.clickMessage;
       let clickTime = post.msg.clickTime;
       document.getElementById("serverMessage").innerHTML = clickId + " " +  clickMessage + " " + clickTime;
-      document.getElementById("notificationData").innerHTML = "Er is iemand eenzaam";
+      document.getElementById("buttonLine").classList.remove('red-line');
+      document.getElementById("buttonLine").classList.add('green-line');
+
+      if(clickMessage == "Er zit niemand op stoel 1") {
+        document.getElementById("buttonLine").classList.add('red-line');
+      document.getElementById("buttonLine").classList.remove('green-line');
+      }
     }
     else {
       console.log("Er is nog niet op de knop gedrukt");
@@ -42,11 +48,16 @@ async function getMessage() {
   });
 }
 
+document.getElementsByClassName('read-more-a').addEventListener('click', function (e) {
+  e.preventDefault();
+  accept();
+});
 
 function accept() {
   peopleUnderwayStored++;
   localStorage.setItem("peopleUnderway", peopleUnderwayStored);
   counterElem.innerHTML = peopleUnderwayStored + " " + "mens(en) onderweg";
+  
   document.getElementById("acceptedNotification").style.display = "block";
   setTimeout(() => {
     document.getElementById("acceptedNotification").style.display = "none";
