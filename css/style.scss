@@ -9,8 +9,12 @@ $color_prime: #9671FF;
 $color_grey: #e2e2e2;
 $color_grey_dark: #a2a2a2;
 
-header {
-    margin-bottom: 150px;
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 .align-items {
@@ -22,63 +26,108 @@ header {
 
 //Navigatie
 // --------------------------------------------------------------------------------
-nav {
-    top: 0;
-    position: fixed;
-    overflow: hidden;
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 18%, rgba(150,113,255,1) 60%, rgba(140,100,255,1) 71%, rgba(150,113,255,1) 88%, rgba(150,113,255,1) 96%, rgba(150,113,255,1) 100%);    
-    width: 100%;
-    border-bottom: 1px solid lightgrey;
-    z-index: 999;
-    ul {
-      display: flex;
-      list-style-type: none;
-      list-style-type: none;
-      margin: 0;
-      padding: 15px;
-      justify-content: space-between;
-      .NavLeft {
-        text-align: left;
-        li {
-          a{
-            img {
-              width: 200px;
-              height: 60px;
-            }
-          }
-        }
-      }
+.header{
+  margin-bottom: 150px;
+  border-bottom: 1px solid #E2E8F0;
+}
 
-      .NavRight {
-        text-align: right;
-        padding-top: 20px;
-        display: inline-block;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 18%, rgba(150,113,255,1) 60%, rgba(140,100,255,1) 71%, rgba(150,113,255,1) 88%, rgba(150,113,255,1) 96%, rgba(150,113,255,1) 100%);    
+}
 
-      }
-      li {
-        display: inline;
-        font-family: "Fira Sans", sans-serif;
-        font-size: 20px;
-        a {
-          color: #ffffff;
-          text-decoration: none;
-          padding: 14px;
-        }
-      }
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100vw;
+}
+
+.nav-item {
+  margin-left: 1rem;
+}
+
+.nav-link{
+  font-family: "Fira Sans", sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  padding: 14px;
+}
+
+.nav-logo {
+    img {
+      width: 200px;
+      height: 60px;
     }
-  }
+}
 
-  @media (max-width: 950px) { 
-    nav {
-      max-width: 425px;
-      height: 95px;
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+      position: absolute;
+      left: -110%;
+      top: 5rem;
+      flex-direction: column;
+      background-color: #fff;
       width: 100%;
-    }
-    .NavRight {
-      display: none;
-      visibility: hidden;
-    }
+      max-width: 100vw;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow:
+          0 10px 27px rgba(0, 0, 0, 0.05);
   }
+
+  .nav-menu.active {
+      left: 0;
+      padding: 0;
+  }
+
+  .nav-item {
+      margin: 2.5rem 0;
+  }
+
+  .nav-link{
+    font-family: "Fira Sans", sans-serif;
+    font-size: 20px;
+    color: black;
+    padding: 14px;
+  }
+
+  .hamburger {
+      display: block;
+      cursor: pointer;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+  }
+
+}
 
   //footer
   //----------------------------------------------------------------------
@@ -91,6 +140,7 @@ nav {
         width: 200px;
         height: 60px;
         margin-top: 70px;
+        margin-bottom: 50px;
       }
       .kletsknop {
         width: 70px;
@@ -99,7 +149,11 @@ nav {
     }
 
     .contactInfo {
-      width: 1053px;
+      @media (min-width: 1320px) {
+        width: 100vw;
+        max-width: 1075px;
+      }
+      
       margin: 0 auto;
       border-top: 1px solid grey;
       border-bottom: 1px solid grey;
@@ -108,7 +162,6 @@ nav {
       }
 
       ul {
-        width: 1053px;
         text-align: center;
         padding: 0px;
         padding-left: 80px;
@@ -117,7 +170,7 @@ nav {
         li {
           font-family: sans-serif;
           text-decoration: none;
-          margin-right: 167px;
+          margin-right: 157px;
           font-size: 14px;
         }
       }
@@ -140,16 +193,17 @@ nav {
       .contactInfo {
         width: 100vw;
         .contactinfoTop {
-          width: 425px;
+          margin: 0 auto;
         }
         
         ul {
-          width: 425px;
+          width: 100vw;
           display: block;
           
           padding-left: 0px;
           li {
-            margin-left: 150px;
+            // margin-left: 150px;
+            margin-right: 0px;
             margin-bottom: 10px;
           }
         }
@@ -189,10 +243,12 @@ a {
 }
 
 .google-maps {
+  text-align: center;
   margin-top: 50px;
   margin-bottom: 100px;
   iframe {
-    width: 1200px;
+    width: 80vw;
+    max-width: 1200px;
     height: 500px;
   }
 }
@@ -200,10 +256,9 @@ a {
 .cards-container {
   .titleCards {
     color: #9671FF;    
-    text-align: left;
+    text-align: center;
     font-size: 30px;
     font-family: sans-serif;
-    margin-left: 350px;
   }
   #notificationData {
     
@@ -217,8 +272,7 @@ a {
 
 .cards {
   display: flex;
-  margin-left: 340px;
-  
+  justify-content: center;
 }
 
 
@@ -226,7 +280,8 @@ a {
 .blog-card {
     display: flex;
     flex-direction: row;
-    margin: 10px;
+    
+    margin-right: 40px;
     box-shadow: 0 3px 7px -1px rgba(#000, .1);
     margin-bottom: 1.6%;
     background: $color_white;
@@ -322,15 +377,18 @@ a {
   .google-maps {
     
     iframe {
-      width: 100%;
+      width: 80vw;
+      max-width: 1200px;
       height: 213;
     }
   }
+}
 
+@media (max-width: 1199px) {
   .cards-container {
     .titleCards {
       color: #9671FF;
-      text-align: left;
+      text-align: center;
       font-size: 30px;
       font-family: sans-serif;
       margin-left: 10px;
@@ -341,11 +399,13 @@ a {
   .cards {
     display: block;
     margin-left: 0px;
-
     
   }
 
   .blog-card {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    width: 420px;
     display: block;
     .description {
       width: 350px;
@@ -378,7 +438,8 @@ a {
 .container{
   font-family: sans-serif;
   margin: 0 auto;
-  width: 1440px;
+  max-width: 1440px;
+  width: 80%;
   background: #fff;
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
@@ -496,20 +557,49 @@ a {
   }
 }
 
-@media (max-width: 950px) {
-  .container{
-    width: 90%;
-    padding: 30px 40px 40px 35px ;
 
-    .content .right-side{
-      width: 75%;
-      margin-left: 55px;
-   }
+@media (max-width: 767px) {
+
+  .container{
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 30px 40px 40px 35px ;
+    .content{
+      flex-direction: column-reverse;
+
+      .left-side{
+        width: 100%;
+        flex-direction: row;
+        margin-top: 40px;
+        justify-content: center;
+        flex-wrap: wrap;   
+        &::before{
+          display: none;
+        }
+      }
+
+      .right-side{
+        width: 75%;
+        margin-left: 0px;
+
+        form {
+          .button {
+            input {
+              max-width: 500px;
+              width: 205%;
+            }
+            
+          }
+        }
+      }
+    }
   }
 }
-@media (max-width: 820px) {
+
+@media (min-width: 768px) and (max-width: 1439px) {
   .container{
-    margin: 40px 0;
+    margin: 0 auto;
     height: 100%;
     .content{
       flex-direction: column-reverse;
@@ -519,7 +609,7 @@ a {
         flex-direction: row;
         margin-top: 40px;
         justify-content: center;
-        flex-wrap: wrap;
+        flex-wrap: wrap;   
         &::before{
           display: none;
         }
@@ -532,7 +622,6 @@ a {
     }
   }
 }
-
 // Register pagina
 // ------------------------------------------------------------------------
 
@@ -699,6 +788,129 @@ a {
   }
 }
 
+@media (max-width: 767px) {
+  .inlog-container {
+    padding: 0;
+    width: 80%;
+    margin: 0 auto;
+    form {
+      padding: 40px;
+
+      .input-wrapper {
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+        input, label{
+          max-width: 400px;
+          width: 100%;
+        }
+      }
+      input[type=submit]{
+        width: 100%;
+      }
+    }
+  }
+
+  .registreren-container {
+    width: 90%;
+    max-width: 1000px;
+    padding: 0px;
+    form {
+      padding: 40px;
+      display: block;
+      
+      .register-left {
+        .input-wrapper {
+          input {
+            width: 90%;
+            max-width: 400px;
+          }
+        }
+        
+      }
+      .register-right{
+        width: 100%;
+        margin-left: 0;
+          input {
+            width: 90%;
+            max-width: 400px;
+          }
+
+          .register-button {
+            margin-top: 20px;
+            width: 92%;
+            position: unset;
+          }
+      }
+    }
+    
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .inlog-container {
+    padding: 0;
+    width: 80%;
+    
+    form {
+      padding: 40px;
+      text-align: center;
+      .input-wrapper {
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+        input, label{
+          max-width: 400px;
+          width: 100%;
+        }
+      }
+
+      input[type=submit]{
+        max-width: 400px;
+        width: 100%;
+      }
+    }
+  }
+
+
+  .registreren-container {
+    width: 90%;
+    max-width: 1000px;
+    padding: 0px;
+    
+    form {
+      padding: 40px;
+      display: block;
+     
+      .register-left {
+        .input-wrapper {
+          input {
+            width: 90%;
+            max-width: 600px;
+          }
+        }
+        
+      }
+      .register-right{
+        width: 100%;
+        margin-left: 0;
+        display: grid;
+          input {
+            width: 90%;
+            max-width: 600px;
+          }
+
+          .register-button {
+            margin-top: 20px;
+            width: 92%;
+            position: unset;
+          }
+      }
+    }
+    
+  }
+}
+
 // Buurtbewoners pagina
 // ------------------------------------------
 
@@ -709,15 +921,33 @@ a {
   padding: 20px;
   max-width: 1031px;
   width: 100%;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    padding: 0;
+  }
+  @media (min-width: 768px) and (max-width: 1439px) {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    justify-items: center;
+    width: unset;
+  }
   .user-container {
     margin-right: 50px;
     margin-bottom: 32px;
-    width: 309px;
+    max-width: 309px;
+    width: 100%;
     background-color: white;
     
     font-family: sans-serif;
-    
-
+    @media (max-width: 767px) {
+        margin: 0 auto;
+        margin-bottom: 32px;
+    }
+    @media (min-width: 768px) and (max-width: 1439px) {
+      margin-right: 0px;
+    }
     .userPicture {
       width: 100%;
       height: 322px;

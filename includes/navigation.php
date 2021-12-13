@@ -1,27 +1,41 @@
 
-<header>
-    <nav>
-        <ul>
-            <div class="NavLeft">
-                <li><a href="index.php"><img class= "logo" src="img/kletsknopLogo.png"></a></li>
-            </div>
-            <div class="NavRight">
-                <li><a href="buurtbewoners.php">Buurtbewoners</a></li>
-                <li><a href="contact.php">Contact</a></li>
+<header class="header">
+    <nav class="navbar">
+        <a href="index.php" class="nav-logo"><img class= "logo" src="img/kletsknopLogo.png"></a>
+        <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="buurtbewoners.php" class="nav-link">Buurtbewoners</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.php" class="nav-link">Contact</a>
+                </li>
                 <?php 
                     // check if the user is logged in
                     if ($_SESSION["logged-in"] == false) {
                 ?>
-                <li><a href="registreren.php" class="buttonNav">Registreren</a></li>
-                <li><a href="login.php" class="buttonNav">Inloggen</a></li>
+                <li class="nav-item">
+                    <a href="registreren.php" class="buttonNav nav-link">Registreren</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.php" class="buttonNav nav-link">Inloggen</a>
+                </li>
                 <?php 
                     } else { 
                         
                         ?>
-                    
-                        <li><a href="includes/logout.php" class="buttonNav">Uitloggen</a></li>
+                        <li class="nav-item">
+                            <a href="profiel.php" class="buttonNav nav-link">Profiel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="includes/logout.php" class="buttonNav nav-link">Uitloggen</a>
+                        </li>
                 <?php  } ?>
             </div>
-        </ul> 
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
     </nav>
 </header>
